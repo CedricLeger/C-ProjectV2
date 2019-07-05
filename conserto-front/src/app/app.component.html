@@ -1,1 +1,10 @@
-<h1>hello</h1>
+<header>
+  <hr>
+<nav> <a href="#"[routerLink]="['/welcome']">Accueil</a> | <a [routerLink]="['/login']">Connexion</a> </nav>
+<a (click)="logout()">Logout</a>
+<hr>
+<header>
+<body>
+  <router-outlet></router-outlet>
+</body>
+

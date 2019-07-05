@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
+import { HttpClient } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-welcome-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomePageComponent implements OnInit {
 
-  constructor() { }
+  title = 'Demo';
+  greeting = {};
 
-  ngOnInit() {
+  constructor(private app: AppService, private http: HttpClient) {
+    http.get('resource').subscribe(data => this.greeting = data);
   }
 
+  authenticated() { return this.app.authenticated; }
+
+}
 }
