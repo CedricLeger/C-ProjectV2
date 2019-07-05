@@ -6,21 +6,21 @@
     </head>
     <body>
         <div>
+          <h1>YES</h1>
             <!-- zone de connexion -->
 
-            <form method="POST">
+            <form [formGroup]="loginFormGroup">
                 <h1>Connexion</h1>
 
                 <label><b>Email</b></label>
-                <input type="text" placeholder="Entrer votre adresse mail" name="username" required>
+                <input [formControlName]="email" type="text" placeholder="Entrer votre adresse mail" name="username" required>
                 <br>
                 <label><b>Password</b></label>
-                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+                <input [formControlName]="password" ="password" placeholder="Entrer le mot de passe" name="password" required>
                 <br>
-                <input type="submit" id='submit' value='LOGIN' >
+                <input (click)="onSubmit()" type="button" value='LOGIN' >
 
 
             </form>
         </div>
     </body>
-</html>
